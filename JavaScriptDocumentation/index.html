@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tecnical Documentation</title>
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>Technical</br> Documentation</header>
+    <a href="#parts_of_javascript" class="nav-link">Introduction</a>
+    <a href="#introduction" class="nav-link">Parts of Javascript</a>
+    <a href="#what_javascript_can_do" class="nav-link">What Javascript Can Do</a>
+    <a href="#client_side_and_server_side_scripting_language" class="nav-link"> Client and server-side
+      language
+    </a>
+    <a href="#libraries_and_frameworks" class="nav-link">Libraries and Frameworks</a>
+    <a href="#javascript_and_HTML" class="nav-link">Javascript and HTML</a>
+    <a href="#javascript_syntax" class="nav-link">Javascript Syntax</a>
+    <a href="#javascript_statement" class="nav-link">Javascript Statement</a>
+    <a href="#javascript_data_Types" class="nav-link">Javascript Data Types</a>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="introduction">
+      <header>Introduction</header>
+      <p>
+        JavaScript is a lightweight,dynamic programming language used to make web pages interactive.It is also fully
+        integrated
+        with HTML and CSS.
+        It is supported by all major browsers and
+        enabled by default.
+        Although Java and JavaScript are similar in name, syntax, and respective standard libraries, the two languages
+        are distinct and differ greatly in design.</p>
+    </section>
+    <section class="main-section" id="parts_of_javascript">
+      <header id="main-header">Parts of Javascript</header>
+      <p>JavaScript is made up of the following three distinct parts:
+        <li id="link">The Core (ECMAScript)</li>
+      <p>ECMAScript,its extensions and implementations exist
+        on Web browsers,NodeJS(a server-side JavaScript platform) and Adobe Flash. Extensions, such as the Document
+        Object Model (DOM), use ECMAScript’s core types and syntax to provide additional functionality to the
+        environment.It is a base upon which more-robust scripting languages may be built.
+        ECMA-262 describes the following parts of ECMAScript:</p>
+      <ul type="circle" class="lists">
+        <li>Syntax</li>
+        <li>Types</li>
+        <li>Statements</li>
+        <li>Keywords</li>
+        <li>Reserved words</li>
+        <li>Operators</li>
+        <li>Objects</li>
+      </ul>
+      <p>The different versions of ECMAScript are defined as editions,and these different versions,introduced additional
+        functionalities which include:<li>Native JSON object for parsing and
+          serializing JSON data</li>
+        <li>Methods for inheritance and advanced property definition</li>
+        <li>New
+          statements and data structures</li>
+        <li>True classes and classical inheritance</li>
+        <li>A new strict mode that slightly
+          augments how ECMAScript engines interpret and execute code</li>
+        <li> String handling</li>
+        <li>Support for regular expressions etc </li>
+        <li id="link">The Document Object Model (DOM)</li>
+      <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that
+        programs can change the document structure, style, and content. The DOM represents the document as nodes and
+        objects; that way, programming languages can interact with the page.</p><br>
+      <p>The DOM is not part of the JavaScript language, but is instead a Web API used to build websites.</p>
+      <p>The DOM API is used directly in JavaScript from within what is called a script, a program run by a browser.
+      </p>
+      <p>The DOM is not a programming language, but without it, the JavaScript language wouldn't have any model or
+        notion of web pages, HTML documents, SVG documents, and their component parts</p><br>
+      <p>The document as a whole, the
+        head, tables within the document, table headers, text within the table cells,paragraphs,headings and all other
+        elements in a document are parts of the document object model for that document. They can all be accessed and
+        manipulated using the DOM and a scripting language like JavaScript.</p>
+      <p>For example, the following function creates a new &lt;p&gt; element, adds text to that element, and then adds
+        it to the tree for the document:</p>
+      <div>
+        <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;script&gt;
+       window.onload = function() {
+  
+           // create   &lt;p&gt; element in an otherwise empty HTML page
+           const paragraph = document.createElement("p");<br>
+           //adds content to the created empty &lt;p&gt; element
+           const paragraph_text = document.createTextNode("Welcome to web page manipulation using DOM and javascript!");<br>
+           //attaches the content to the &lt;p&gt; element 
+           paragraph.appendChild(paragraph_text);<br>
+           //attaches the &lt;p&gt; element  to the body of the  HTML document
+           document.body.appendChild(paragraph);
+        }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+      </div>
+
+      <li id="link">The Browser Object Model (BOM)</li>
+      <p>The Browser Object Model (BOM) in JavaScript includes the properties and methods for JavaScript to access and
+        manipulate the browser window.
+        BOM provides you with:
+      <ul type="circle" class="lists">
+        <li> The window object to show the size of the window</li>
+        <li>The window.screen object to show the size of the screen</li>
+        <li>The window.location object can be used to get the current page address (URL) and to redirect the browser
+          to
+          a new page..</li>
+        <li>Cookies let you store user information in web pages.</li>
+        <li>Popup boxes: Alert box, Confirm box, and Prompt box.</li>
+      </ul>
+      <div>
+        <pre><code>&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;script&gt;
+        document.write("Screen Width: " + screen.width);
+        console.log("window.innerHeight");
+        document.alert("window.location.href");
+           document.write("Screen height: " + screen.height);
+           window.confirm("Are you a pop box?");
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+      </div>
+      <p>There are varying levels of support for the three parts of JavaScript across the five major web
+        browsers (Internet Explorer, Firefox, Chrome, Safari, and Opera). Support for ECMAScript 3 is
+        generally good across all browsers, and support for ECMAScript 5 is growing, whereas support for
+        the DOM varies widely. The BOM, recently codified in HTML5, can vary from browser to browser</p>
+    </section>
+    <section class="main-section" id="what_javascript_can_do">
+      <header id="main-header">What Javascript can do</header>
+      <ul type="circle" class="lists">
+        <li>Javascript plays an important role in validating user inputs before submitting it to the server.</li>
+        <li>Add new HTML to the page, change the existing content, modify styles.</li>
+        <li>Get and set cookies, ask questions to the visitor, show messages.</li>
+        <li>React to user actions, run on mouse clicks, pointer movements, key presses.</li>
+        <li>Send requests over the network to remote servers, download and upload files.</li>
+        <li>Javascript provides Ajax library which helps in loading back-end data while you are doing some other thing
+          on a web page.</li>
+      </ul>
+    </section>
+    <section class="main-section" id="client_side_and_server_side_scripting_language">
+      <header id="main-header">client-side and server-side scripting Language</header>
+      <p>JavaScript was initially created as a browser-only language,but today,it can execute on the server,actually
+        on
+        any device that has a special program called the JavaScript engine.</p>
+      <li id="link">Client-side version</li>
+      <p>On the client side,JavaScript is run by v8 engine (Google chrome).Client Side JavaScript enables the
+        enhancement and manipulation of web pages and client browsers. Scripts are embedded in or included from HTML
+        documents and interact with the DOM.</p>
+      <li id="link">Server-side version</li>
+      <p>Server Side JavaScript is an extended version of JavaScript that enables back-end access to databases, file
+        systems, and servers.The v8 engine(Google chrome with some modifications to provide the server functionality)
+        is
+        also used in the servers to run javascript codes.</p>
+      </article>
+    </section>
+    <section class="main-section" id="libraries_and_frameworks">
+      <header id="main-header">Libraries And Frameworks</header>
+      <p>
+        JavaScript libraries are collections of prewritten code snippets that can be used (and reused) to perform
+        common
+        JavaScript functions.While JavaScript frameworks are a full toolset that help shape and organize your website
+        or
+        web application.</p>
+      <p>Examples of JavaScript Libraries:</p>
+      <ul type="circle" class="lists">
+        <li>jQuery</li>
+        <li>React JS</li>
+      </ul>
+      <p>Some examples of JavaScript Frameworks:</p>
+      <ul type="circle" class="lists">
+        <li>Angular</li>
+        <li>Ember JS</li>
+        <li>Vue</li>
+      </ul>
+    </section>
+    </section>
+    <section class="main-section" id="javascript_and_HTML">
+      <header id="main-header">Javacript and HTML</header>
+      <p>Javascript statements can be written right in a web page’s HTML and run automatically as the page loads.</p>
+      <p>They are inserted between &lt;script&gt;and &lt;/script&gt;tags.</p>
+      <p>Scripts can be placed in the &lt;head&gt; &lt;body&gt; or in both.</br>
+        Example:</p>
+      <p>JavaScript in &lt;head&gt;</p>
+      <div>
+        <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;script&gt;
+      alert( "Hi thеrе. Thiѕ tеxt iѕ writtеn uѕing JavaScript!" );
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+      </div>
+
+      <p>JavaScript in &lt;body&gt;</p>
+
+      <div>
+        <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+   &lt;script&gt;
+   alert( &quot;I'm JavaScript!&quot; );
+    &lt;/script&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+      </div>
+      <p>External scripts</p>
+      <p>If you have a lot of JavaScript statements(codes), we can put it into a separate file.
+        JavaScript files have the file extension .js.
+        Script files are attached to HTML with the <code>src</code> attribute:</p>
+      <div class="codebox__code" data-code="1">
+        <pre
+          class="line-numbers language-markup"><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <p>To attach several scripts, use multiple tags:</p>
+      </div>
+
+      <div>
+        <pre class="line-numbers language-markup"><code>&lt;script src=&quot;/js/script1.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;/js/script2.js&quot;&gt;&lt;/script&gt;
+  …</code></pre>
+      </div>
+      <script src="myScript.js"></script>
+      <p>You can also place an external script in &lt;head&gt; &lt;body&gt;.</p>
+    </section>
+    <section class="main-section" id="javascript_syntax">
+      <header id="main-header">Javascript Syntax</header>
+      <p>These are set of rules that define a correctly structured JavaScript program</p>
+      <li id="link">JavaScript Identifiers / Names</li>
+      <p>An identifier is the name of a variable, function or property. Identifiers may be
+        one or more characters in the following format:
+      <ul type="circle" class="lists">
+        <li>The first character must be a letter, an underscore (_), or a dollar sign ($).</li>
+        <li>All other characters may be letters, underscores, dollar signs, or numbers.</li>
+      </ul>
+      <p>By convention, ECMAScript identifiers use camel case, meaning that the first letter is lowercase and
+        each additional word is offset by a capital letter, like this:<br>
+        firstSecond<br>
+        sayHelloWorld</p>
+      <li>Names are case sensitive(y and Y are different Identifiers).</li>
+      <li>Keywords, reserved words, true, false, and null cannot be used as identifiers.</li>
+      <p class="note">NOTE −Javascript identifiers are case-sensitive(Y and y are different)</p>
+      <li id="link">JavaScript Variables</li>
+      <p>Variables are used to store data values.
+        JavaScript uses the keywords var, let and const to declare variables.
+        An equal sign(=),is used to assign values to variables.</br>
+        Example:</p>
+      <pre><code>let message;</code></pre>
+      <p>Now, we can put some data or value into it by using the assignment operator =</p>
+      <pre><code>let message;
+            message = 'Welcome';</code></pre>
+      <p>Multiple variable can also be declared in a single line,separated by a comma:
+      <pre><code>var a = 'welcome', b = 10, c = 23.6;</code></pre>
+      </p>
+      <p>Variables can be declared either inside a function or outside a function</p><br>
+      <p>Variables that can be declared inside a function and also accessed inside a function are called <strong>Local
+          variable</strong><br>
+      <p>Variables that can be declared outside a function and accessed anywhere in the javascript code, even inside a
+        function are called <strong>Global Variables</strong>.</p>Example:
+      <pre><code>
+                var globalVariable = "javascript"; //This is a global  variable
+                function myFunction(){
+                  var  localVariable = "This is a local variable"; //Local variable
+                  alert(localVariable + globalVariable) //can be accessed inside the function.
+                }
+                myFunction();
+                alert(globalVariable); //can access the global variable outside the function;
+                alert(localVariable); // cannot access the local variable outside the function;
+              </code></pre>
+      <a class="link" href="https://w.w.w.tutorialsteacher.com/javascript/scope-in-javascript"> Learn Global and scope
+        in Javascript</a>
+      </p>
+      <p>The string is now saved in the variable. We can access it using the variable
+        name:
+      <pre><code>alert(message);</code></pre>
+      </p>
+
+      <li id="link">JavaScript is case sensitive. </li>
+      <p>It is common to start the name of a constructor with a capitalised letter, and the name of a function or
+        variable with a lower-case letter.</br>
+        So the identifiers Fruit and FRUIT will convey different meanings in JavaScript.</br>
+        <li id="link">Semicolons ;</li>
+      <p>
+        Semicolon is added at the end of each executable statement:
+      <p>Examples</p>
+      <pre class="line-numbers language-javascript"><code>let a, b, c;&nbsp;&nbsp; &nbsp;&nbsp; // Declares 3 variables
+          a = 10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Assign the value 10 to a
+          b = 20;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Assign the value 20 to b
+          c = a + b;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Assign the sum of a and b to c
+            </code></pre>
+      <p>
+        When separated by semicolons, multiple statements can be written on one line:</p>
+      <pre><code>
+      a = 5; b = 6; c = a + b;
+     </code></pre>
+      <li id="link">JavaScript Comments</li>
+      <p>JavaScript comments can be used to explain JavaScript code, and to make it more readable.</p>
+      <p>A single-line comment begins with two forward-slash characters //<br>
+      <p>This example uses a single line comment at the end of each line to explain the code:</p>
+      <pre><code>let a = 12; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Declare a, gives it the value of 12</code></pre>
+      <p>A Multi-line comment begins with a forward slash and asterisk (/*) and ends with the opposite (*/).</br>
+        This example uses a multi-line comment (a comment block) to explain the code</p>
+      <br>
+      <p>/* The code below will add the text in quotes to the elements with id="heading" and id="paragraph"in your HTML
+        document: */</p>
+      <pre><code>
+  document.getElementById("heading").innerHTML = "Javascript comments";
+  document.getElementById("paragraph").innerHTML = "This is javascript multi-line comments";</code></pre>
+      <p class="note">NOTE −Any text between // and /* */ will not executed by JavaScript.</p>
+      <li id="link">Strict Mode</li>
+      <p>ECMAScript 5 introduced the concept of strict mode. Strict mode is a different parsing and
+        execution model for JavaScript. To enable strict mode for an entire script, include the
+        following at the beginning of your javascript file:
+        <strong>“use strict”;</strong>
+        this tells
+        supporting JavaScript engines to change into strict mode.
+        <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/Javascript/Reference/Strict_mode">More on
+          strict mode</a>
+      </p>
+    </section>
+    <section class="main-section" id="javascript_statement">
+      <header id="main-header">Javascript Statement</header>
+      <p>JavaScript statements are the commands that tell the browser what actions to perform. Actions like
+      <ul>
+        <li>Creating a variable or a function</li>
+        <li> Looping through an array of elements</li>
+        <li>Evalauting code based on a specific condition etc.</li>
+      </ul>
+      <br>
+      <p>Statments in javascript can be grouped into the following:</p><br>
+      <ul type="circle" class="lists">
+        <li>Declaration Statemnts</li>
+        <p>These are statements that create variables and functions by using the <strong>var and function
+            statements</strong>
+        </p>
+        <li>Conditional Statements</li>
+        <p>They are used to perform different actions based on different conditions</p>
+        <ul>
+          <li>The if Statement: specifies a block of code to be executed if a condition is true</li>
+          <pre><code>
+                if(20 >10){
+                  console.log("correct")
+                }
+                // correct shows
+              </code></pre>
+          <p>(20 >10) is the condition to test,which in this case is true and because is true, "correct" gets shown
+          </p>
+          <li>Else Statement shows when the if condition is not true</li>
+          <pre><code>
+                if(20 < 10){
+                console.log("correct")
+                }else{
+                console.log("wrong")
+                }
+                              // wrong shows
+                            </code></pre>
+          <p>(20 < 10)the condition is not true,so "wrong" gets shown</p>
+              <li>Else if Statement specifies a new condition for testing when the first if condition is "false"</li>
+              <pre><code>
+                      if(20 < 10){
+                       console.log("apple")
+                        }else if(20 > 10)
+                        {
+                        console.log("tomato")
+                        }
+                          // tomato shows since the first condition was wrong
+                                        </code></pre>
+              <p class="note">NOTE −if is in lowercase letters.Uppercase letters (If or IF) will generate a javascript
+                error</p>
+              <li> Switch Statement is a collection of case statements that are compared to the switch condition and
+                evaluated when the condition and case are true.A break is used betweenn the cases to prevent
+                additional execution.A default gets evaluated when none of the cases are true</li>Example:
+              <pre><code>
+                  let color ="green";
+                  switch(color){
+                    case:"orange":
+                    console.log('A mix of red and yellow');
+                    break;
+                    case:"green":
+                    console.log('A mix of blue and yellow');
+                    break;
+                    default:
+                    console.log("Not sure about this one");
+                    break;
+                  }
+                  // A mix of blue and yellow shows
+                </code></pre>
+              <li>For loop: used to run code a set number of times</li>
+              <pre><code>
+                for(let i =0; i < 5; i++){
+                  console.log(i);
+                }
+                //1 2 3 4 5 show
+                i is set to  0 ;<br> i< 5 is checked each time and if the condition is true, i is increased until i = 5,then the code stops running.
+              </code></pre>
+              <li>While statement executes a specified statement as long as the condition evaluates to true</li>
+              <pre><code>
+                let n =0;
+                while (n < 3){
+                  n++;
+                } console.log(n);
+                // 3 shows
+                
+              </code></pre>
+        </ul>
+        <p>
+          JavaScript statements are composed of:
+          Values, Operators, Expressions, Keywords, and Comments.</p>
+
+        <li id="link">Javascript Keywords</li>
+        <p>Javascript keywords are reserved and <em>cannot be used as variables,function names or labels.</em> </p>
+        <p>Some javascript keywords</p>
+        <table>
+          <tr>
+            <td>const</td>
+            <td>let</td>
+            <td>await</td>
+            <td>for</td>
+            <td>extends</td>
+          </tr>
+          <tr>
+            <td>in</td>
+            <td>null</td>
+            <td>new</td>
+            <td>public</td>
+            <td>delete</td>
+          </tr>
+          <tr>
+            <td>package</td>
+            <td>throw</td>
+            <td>super</td>
+            <td>this</td>
+            <td>switch</td>
+          </tr>
+          <tr>
+            <td>var</td>
+            <td>import</td>
+            <td>while</td>
+            <td>try</td>
+            <td>private</td>
+          </tr>
+          <tr>
+            <td>else</td>
+            <td>export</td>
+            <td>function</td>
+            <td>if</td>
+            <td>true</td>
+          </tr>
+        </table>
+        <a class="link" href="https://educba.com">More on javascript keywords</a>
+        <li id="link">Javascript Values</li>
+        <p>They are bits of pieces of information of different data types like numbers,text,functions etc created by
+          invoking their names.</p>
+        <ul type="circle" class="lists">
+          <li>Number value can be an integer, a floating point, an exponential,a 'NaN' or an 'infinity'
+          </li>
+          <li>String values,represent text,which are put within quotes(double,single quote and backticks)
+          </li>
+          <li>Boolean Values are just two:True and False.They distinguish between "yes" and "no" and also used to check
+            logical conditions.
+          </li>
+          <li>Undefined,shows the absence of a value.Variables that are not assigned values are undefined</li>
+          <li>Null is represented by one value,which is null, it means that no value.</li>
+        </ul>
+        <li id="link">Javascript Expressions</li>
+        <p>Any unit of code that can be evaluated to a value is an expression </p>
+        <li>Arithmetic Expressions: 10 + 3, 10-3</li>
+        <li>String Expressions: 'hello' + 'world'</li>
+        <li>Logical Expressions: 10 > 9; a ===20;</li>
+        <li>Assignment Expressions: one =10;</li>
+
+        <li id="link">Javascript Operators</li>
+        <ul type="circle" class="lists">
+          <li>The assignment operator(=) is used to assign values to variables
+            <pre><code>var a  = 10; let b ="hello"; 
+            //assigns value 10 to a and value "hello" to b</code></pre>
+          </li>
+          <p class="note">NOTE −The "equal to" operator is written like == in javascript</p>
+          <li>The addition operator(+) is used to add values together
+            <pre><code>var a  = 10; let b =20; 
+          let c = a + b;
+                  </code></pre>
+          </li>
+          <li>The subtraction operator(-) is used to remove a value from another
+            <pre><code>var a  = 10; let b =20; 
+                let c = b - a;
+                        </code></pre>
+          </li>
+          <li>The division operator(/) is used to remove a value from another
+            <pre><code>var a  = 10; let b =20; 
+                      let c = b / a;
+                              </code></pre>
+          </li>
+          <li>The Multiplication operator(*) is used to remove a value from another
+            <pre><code>var a  = 10; let b =20; 
+                      let c = b * a;
+                            </code></pre>
+          </li>
+          <li>The Remainder operator(%) is used to remove a value from another
+            <pre><code>var a  = 10; let b =20; 
+                      let c = b % a;
+                              </code></pre>
+          </li>
+          <a class="link" href="https://www.w3schools.com/js/js_assignment.asp">More on javascript operators</a>
+        </ul>
+        <div>
+    </section>
+    <section class="main-section" id="Javascript_Data_Types">
+      <header id="main-header">Javascript Data Types</header>
+      <p>Javascript data types are divided into two:<strong>the primitive and objects</strong></p>
+      <li id="link">Primitive data types</li>
+      <p>Primitive data types have single data values <strong>(Eg. var a =5;)</strong>,cannot be changed<strong>(if we
+          assign a new value to a, ie var a =10,it doesn't change the value of the first a ie 5,but it creates a new
+          variable 'a' with a new value 6</strong> have no method
+        The different primitive data types include:</p>
+      <ul type="circle" class="lists">
+        <li>Number: It can be an integer, a floating point, an exponential,a 'NaN' or an 'infinity' Example:<br> var x
+          =20;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // integer <br>var y =
+          20.2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // decimal <br>var z =
+          20e4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// exponential
+          <br>20/0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// if a number is divided by 0,the resulting value is
+          infinity <br>'hello' + 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// if you perform an arithmetic operation
+          on
+          a number with a non-numeric data,(string) it returns a NaN
+        </li>
+        <li>String: It represents text,which are put within quotes(double,single quote and backticks)
+          <pre><code>let car   = "This is ad";<br>let car   = 'This a car'; <br> var car =`This is a backtick` </code></pre>
+        </li>
+        <li>Boolean Values are just two:True and False.They distinguish between "yes" and "no",also used to check
+          logical condition in an expression.
+          <pre><code>let a = 10; <br>let b =10; let c = 20
+            (a==b)  returns true,(a>c)  //returns false;</prev>
+          </li>
+          <li>Undefined,shows the absence of  a value.Variables  that are not assigned values are undefined.<strong>Eg var b;it is declared, but was not assigned a value</strong></li>
+          <li>Null is represented by one value,which is null, it means that no value.<strong>Eg. var b  = null;</strong></li>
+        </ul>
+        <li id="link"> Non-Primitive data types can be changed or mutated and are gotten from primitive data types</li>
+        <p>Arrays, object  and functions are non-primitive data types</p>
+        <ul type="circle" class="lists">
+<li>Object</li>
+<p>Objects are variables,but can contain many values.the values are written as name:value pairs(name and value separated by a colon</p>
+<pre><code>
+  var person ={
+    name:"Chizober",
+    gender:"Female",
+    department:Front-End;
+  }
+
+  The value of name can be changed
+  person[name] = "Esther";
+  console.log(name) returns Esther.
+</code></pre>
+        <li>Array: Array contains more than one value with a numerical index, where the index starts from 0</li>
+        <pre><code>
+  const cars =["Volvo","Honda","Ford","Ferrari"]
+   let newCar = cars[1] = "Corolla";
+  console.log(newCar)
+  //return Corolla, changes the value from Honda to Corolla,since Hond has the index of 1
+</code></pre>
+        <li>Javascript Function</li>
+        <p> It is a block of code designed to perform a particular task.It is executed when something invokes it. It
+          is defined by function keyword, followed by a name and a parentheses()</p>
+        <pre><code>
+  function greet(){
+    console.log("Hello there");
+  }
+  greet(); // the function is invoked here
+  // returns Hello world as output
+</code></pre>
+      </ul>
+    </section>
+    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button> -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <h3 class="references">References</h3>
+    <ul class="ref-list">
+      <li>mozilla.org</li>
+      <li>w3schools.com</li>
+      <li>educba.com</li>
+      <li>tutorialsteacher.com</li>
+      <li>freecodeCamp</li>
+      <li>Dev Community</li>
+    </ul>
+  </main>
+  <script src="index.js">
+   
+  </script>
+
+</body>
+
+</html>
